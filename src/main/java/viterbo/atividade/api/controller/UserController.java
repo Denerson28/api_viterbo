@@ -20,7 +20,7 @@ public class UserController {
     @PostMapping
     @Transactional
     public void Cadastrar(@RequestBody @Valid UserDTO userDTO){
-    repository.save(new User(userDTO));
+        repository.save(new User(userDTO));
     }
 
     @GetMapping
