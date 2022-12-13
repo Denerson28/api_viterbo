@@ -4,6 +4,7 @@ create table events(
     nome varchar(100) not null,
     sigla varchar(100) not null,
     descricao varchar(100) not null,
+    id_edicao bigint,
 
     primary key(id)
 );

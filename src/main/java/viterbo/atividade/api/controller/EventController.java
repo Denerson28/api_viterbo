@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import viterbo.atividade.api.dto.EventDTO;
-import viterbo.atividade.api.dto.dadosAtualizarEventoDTO;
+import viterbo.atividade.api.dto.DadosAtualizarEventoDTO;
 import viterbo.atividade.api.entity.Event;
 import viterbo.atividade.api.interfaces.EventRepository;
 
@@ -31,8 +31,14 @@ public class EventController {
 
     @PutMapping
     @Transactional
-    public void AtualizarEvento(@RequestBody @Valid dadosAtualizarEventoDTO eventoAtualizar){
+    public void AtualizarEvento(@RequestBody @Valid DadosAtualizarEventoDTO eventoAtualizar){
         var evento = repository.getReferenceById(eventoAtualizar.id());
         evento.AtualziarDados(eventoAtualizar);
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void DeletarEvento(@PathVariable Long id){
+        repository.deleteById(id);
     }
 }

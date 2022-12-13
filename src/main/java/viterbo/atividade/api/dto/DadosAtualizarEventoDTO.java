@@ -1,12 +1,15 @@
 package viterbo.atividade.api.dto;
 
 import jakarta.validation.constraints.NotNull;
+import viterbo.atividade.api.entity.Event;
 
-public record dadosAtualizarEventoDTO(
+public record DadosAtualizarEventoDTO(
         @NotNull
         Long id,
 
         String nome,
         String sigla,
-        String descricao) {
+        String descricao,
+        Long id_edicao
+) {
 }

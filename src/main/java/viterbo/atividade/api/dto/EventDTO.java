@@ -5,18 +5,18 @@ import jakarta.validation.constraints.NotNull;
 import viterbo.atividade.api.entity.Event;
 
 public record EventDTO (
-        @NotNull
-        Long id,
 
+        Long id,
         @NotBlank
         String nome,
         @NotBlank
         String sigla,
         @NotBlank
-        String descricao
+        String descricao,
+        Long id_edicao
 ) {
 
     public EventDTO(Event event){
-        this(event.getId(), event.getNome(), event.getSigla(), event.getDescricao());
+        this(event.getId(), event.getNome(), event.getSigla(), event.getDescricao(), event.getId_edicao());
     }
 }

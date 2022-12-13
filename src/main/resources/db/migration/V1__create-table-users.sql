@@ -7,5 +7,4 @@ create table users(
     afiliacao varchar(100) not null,
 
     primary key(id)
-
 );
